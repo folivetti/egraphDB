@@ -32,3 +32,11 @@ CREATE TABLE eclass (
     cost NUMERIC NOT NULL,
     best enode NOT NULL
 );
+
+CREATE TABLE parents (
+    eid INTEGER,
+    parent_eid INTEGER,
+    enode enode,
+    PRIMARY KEY (eid, parent_eid, enode),
+    UNIQUE (eid, parent_eid, enode)
+);
